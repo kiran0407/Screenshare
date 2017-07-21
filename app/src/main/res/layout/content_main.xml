@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#439186"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.enchcorp.screenshare.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="2dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/login"
+            android:textColor="@color/white_greyish"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:theme="@style/TextLabel"
+
+            android:layout_height="wrap_content">
+            <EditText
+                android:textSize="15sp"
+                android:hint="USER NAME"
+                android:layout_marginLeft="0dp"
+                android:paddingRight="60dp"
+                android:layout_marginTop="100dp"
+                android:textColor="#ffffff"
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:background="@drawable/selector_bg_edit_2"
+                android:textCursorDrawable="@drawable/bg_input_cursor_2"
+                android:paddingBottom="2dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:theme="@style/TextLabel"
+
+            android:layout_height="wrap_content">
+            <EditText
+                android:textSize="15sp"
+                android:hint="MOBILE NUMBER"
+                android:layout_marginLeft="0dp"
+
+                android:layout_marginTop="100dp"
+                android:textColor="#ffffff"
+                android:id="@+id/phno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="10"
+                android:background="@drawable/selector_bg_edit_2"
+                android:textCursorDrawable="@drawable/bg_input_cursor_2"
+                android:paddingBottom="2dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:theme="@style/TextLabel"
+
+            android:layout_height="wrap_content">
+            <EditText
+                android:textSize="15sp"
+                android:hint="EMAIL"
+                android:layout_marginLeft="0dp"
+
+                android:layout_marginTop="100dp"
+                android:textColor="#ffffff"
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:background="@drawable/selector_bg_edit_2"
+                android:textCursorDrawable="@drawable/bg_input_cursor_2"
+                android:paddingBottom="2dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:theme="@style/TextLabel"
+
+            android:layout_height="wrap_content">
+            <EditText
+                android:textSize="15sp"
+                android:hint="PASSWORD"
+                android:layout_marginLeft="0dp"
+
+                android:layout_marginTop="100dp"
+                android:textColor="#ffffff"
+                android:id="@+id/pswd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:background="@drawable/selector_bg_edit_2"
+                android:textCursorDrawable="@drawable/bg_input_cursor_2"
+                android:paddingBottom="2dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp" />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buton_selector"
+            android:padding="3dp"
+            android:text="@string/login"
+            android:textColor="#1E2538"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+
+
+    <TextView android:id="@+id/link_login"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/login_layout"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp"
+        android:text="Already a member? Login"
+        android:gravity="center"
+        android:textSize="16dip"/>
+
+
+</RelativeLayout>

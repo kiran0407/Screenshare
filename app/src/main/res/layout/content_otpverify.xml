@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.enchcorp.screenshare.Otpverify"
+    tools:showIn="@layout/activity_otpverify">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+    <TextView
+        android:id="@+id/access"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:text="54376894"
+        android:background="@drawable/textviewborder"
+        android:gravity="center"
+        android:ems="10"
+        android:textColor="#439186"
+        android:inputType="number"
+        android:hint="YOUR ACCESS CODE" />
+    <Button
+        android:layout_width="150dp"
+        android:id="@+id/con"
+        android:layout_height="wrap_content"
+        android:text="share screen"
+        android:layout_marginTop="10dp"
+        android:background="#439186"/>
+
+</LinearLayout>
+</RelativeLayout>

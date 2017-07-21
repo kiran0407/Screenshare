@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.enchcorp.screenshare.WhiteboardActivity"
+    tools:showIn="@layout/activity_whiteboard">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_pencil"
+                android:src="@drawable/ic_action_marker" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_eraser"
+                android:src="@drawable/ic_action_erase" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center" >
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/button_color"
+                    android:background="#ff000000"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_undo"
+                android:src="@drawable/ic_action_undo" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_clear"
+                android:src="@drawable/ic_action_discard" />
+
+        </LinearLayout>
+
+        <view
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            class="com.enchcorp.screenshare.DrawingView"
+            android:id="@+id/drawingview_canvas"
+            android:layout_gravity="center_horizontal"
+            android:background="#ffffffff" />
+    </LinearLayout>
+
+
+</RelativeLayout>

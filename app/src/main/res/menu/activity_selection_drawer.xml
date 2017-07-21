@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/allstudnts"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="All Students" />
+        <item
+            android:id="@+id/reqstdnts"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Requested Students" />
+        <item
+            android:id="@+id/mystdnts"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="My Students" />
+
+    </group>
+
+
+
+</menu>
