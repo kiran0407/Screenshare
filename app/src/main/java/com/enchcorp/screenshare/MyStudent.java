@@ -1,7 +1,6 @@
 package com.enchcorp.screenshare;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
-import com.sdsmdg.tastytoast.TastyToast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,24 +27,21 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class ReqStudents extends AppCompatActivity {
-        ListView reqstd;
-    String uid,umail;
+public class MyStudent extends AppCompatActivity {
+    ListView mystdlist;
+    String user,uid,umail,uphno,s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_req_students);
+        setContentView(R.layout.activity_my_student);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        reqstd=(ListView)findViewById(R.id.reqstudlist1);
-        Intent intent = getIntent();
-      //  user = intent.getStringExtra("username");
-        umail = intent.getStringExtra("email");
-        new kilomilo().execute(MyGlobal_Url.MYBASIC_STDREQ);
+
+        mystdlist=(ListView)findViewById(R.id.teacherlist1);
+        new kilomilo().execute(MyGlobal_Url.MYBASIC_MYSTD);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public class MovieAdap extends ArrayAdapter {
@@ -82,79 +72,8 @@ public class ReqStudents extends AppCompatActivity {
                 convertView = inflater.inflate(resource,null);
                 holder = new ViewHolder();
                 //  holder.logo=(ImageView) convertView.findViewById(R.id.teamlogo);
-                holder.sname=(TextView) convertView.findViewById(R.id.teachername);
-                holder.accept=(TextView) convertView.findViewById(R.id.accept);
-                holder.reject=(TextView) convertView.findViewById(R.id.reject);
-                final StudentName studentName=movieModelList.get(position);
-                holder.accept.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                      uid=studentName.getUid();
-                        Toast.makeText(getApplicationContext(),"You Accepted the student",Toast.LENGTH_SHORT).show();
-                        StringRequest stringreqs = new StringRequest(Request.Method.POST, MyGlobal_Url.MYBASIC_ACCEPT, new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                startActivity(new Intent(ReqStudents.this,Selection.class));
-                            }
+                holder.sname=(TextView) convertView.findViewById(R.id.studentname);
 
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                // Toast.makeText(getApplicationContext(), "INTERNET CONNECTION NOT AVAILABLE", Toast.LENGTH_SHORT).show();
-                                TastyToast.makeText(getApplicationContext(), "INTERNET CONNECTION NOT AVAILABLE", TastyToast.LENGTH_LONG,
-                                        TastyToast.ERROR);
-                            }
-                        }) {
-
-                            @Override
-                            protected Map<String, String> getParams() throws AuthFailureError {
-
-                                Map<String, String> uandme = new HashMap<String, String>();
-                                uandme.put("uid", uid);
-                                uandme.put("umail",umail);
-
-                                return uandme;
-                            }
-                        };
-                        AppController.getInstance().addToRequestQueue(stringreqs);
-
-                    }
-                });
-                holder.reject.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        uid=studentName.getUid();
-                        Toast.makeText(getApplicationContext(),"You Rejected the student",Toast.LENGTH_SHORT).show();
-                        StringRequest stringreqs = new StringRequest(Request.Method.POST, MyGlobal_Url.MYBASIC_REJECT, new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                               startActivity(new Intent(ReqStudents.this,Selection.class));
-                            }
-
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                // Toast.makeText(getApplicationContext(), "INTERNET CONNECTION NOT AVAILABLE", Toast.LENGTH_SHORT).show();
-                                TastyToast.makeText(getApplicationContext(), "INTERNET CONNECTION NOT AVAILABLE", TastyToast.LENGTH_LONG,
-                                        TastyToast.ERROR);
-                            }
-                        }) {
-
-                            @Override
-                            protected Map<String, String> getParams() throws AuthFailureError {
-
-                                Map<String, String> uandme = new HashMap<String, String>();
-                                uandme.put("uid", uid);
-
-                                return uandme;
-                            }
-                        };
-                        AppController.getInstance().addToRequestQueue(stringreqs);
-
-
-                    }
-                });
-               // holder.reqsend=(Button) convertView.findViewById(R.id.ver);
                 convertView.setTag(holder);
             }
             else {
@@ -175,7 +94,7 @@ public class ReqStudents extends AppCompatActivity {
         class ViewHolder{
 
 
-            public TextView sname,accept,reject;
+            public TextView sname;
 
 
 
@@ -233,20 +152,12 @@ public class ReqStudents extends AppCompatActivity {
             super.onPostExecute(movieMode);
             if (movieMode!=null)
             {
-                MovieAdap adapter = new MovieAdap(getApplicationContext(), R.layout.reqstd, movieMode);
-                reqstd.setAdapter(adapter);
-                reqstd.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                MovieAdap adapter = new MovieAdap(getApplicationContext(), R.layout.studentslist, movieMode);
+                mystdlist.setAdapter(adapter);
+                mystdlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         StudentName item = movieMode.get(position);
-//                        Intent intent=new Intent(AllStudents.this,Selection.class);
-//                      //  intent.putExtra("pname",user1);
-//
-//                        startActivity(intent);
-//                        s=item.getUid();
-//                        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
-//
-//
 
 
                     }

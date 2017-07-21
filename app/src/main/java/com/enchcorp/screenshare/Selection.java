@@ -236,9 +236,13 @@ Button start,send;
             // Handle the camera action
             startActivity(new Intent(Selection.this,AllStudents.class));
         } else if (id == R.id.reqstdnts) {
-            startActivity(new Intent(Selection.this,ReqStudents.class));
+        //    startActivity(new Intent(Selection.this,ReqStudents.class));
+            Intent intent=new Intent(Selection.this,ReqStudents.class);
+            intent.putExtra("umail",umail);
+            startActivity(intent);
         } else if (id == R.id.mystdnts) {
 
+            startActivity(new Intent(Selection.this,MyStudent.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

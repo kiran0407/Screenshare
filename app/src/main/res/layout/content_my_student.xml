@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.enchcorp.screenshare.Student"
-    tools:showIn="@layout/app_bar_student">
+    tools:context="com.enchcorp.screenshare.MyStudent"
+    tools:showIn="@layout/activity_my_student">
 
 
     <ListView
@@ -18,5 +18,4 @@
         android:id="@+id/teacherlist1">
 
     </ListView>
-
 </RelativeLayout>

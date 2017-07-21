@@ -122,7 +122,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_all_students">AllStudents</string>
-    <string name="title_activity_student">Student</string>
+    <string name="title_activity_student">Accepted Teachers</string>
     <string name="title_activity_all_teacher">AllTeacher</string>
     <string name="title_activity_req_students">ReqStudents</string>
+    <string name="title_activity_my_student">MyStudent</string>
 </resources>

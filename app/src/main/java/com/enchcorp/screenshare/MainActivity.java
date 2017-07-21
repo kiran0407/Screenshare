@@ -178,14 +178,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             intent.putExtra("mobile", phno);
                             intent.putExtra("username", user);
                             intent.putExtra("email", email);
-//                            SharedPreferences pref = PreferenceManager
-//                                    .getDefaultSharedPreferences(MainActivity.this);
-//                            SharedPreferences.Editor editor = pref.edit();
-//                            editor.putString ("uid", uid);
-//                            editor.putString ("mobile", phno);
-//                            editor.putString ("username", user);
-//                            editor.putString ("email", email);
-//                            editor.commit();
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
@@ -197,14 +189,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             intent.putExtra("mobile", phno);
                             intent.putExtra("username", user);
                             intent.putExtra("email", email);
-//                            SharedPreferences pref = PreferenceManager
-//                                    .getDefaultSharedPreferences(MainActivity.this);
-//                            SharedPreferences.Editor editor = pref.edit();
-//                            editor.putString ("uid", uid);
-//                            editor.putString ("mobile", phno);
-//                            editor.putString ("username", user);
-//                            editor.putString ("email", email);
-//                            editor.commit();
+
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);

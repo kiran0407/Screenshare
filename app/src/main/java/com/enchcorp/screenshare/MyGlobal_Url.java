@@ -13,6 +13,8 @@ class MyGlobal_Url {
     public static String MYBASIC_STDREQ="http://24x7shoppers.com/kiran0407/screenshare/reqstudents.php";
     public static String MYBASIC_ACCEPT="http://24x7shoppers.com/kiran0407/screenshare/accept.php";
     public static String MYBASIC_REJECT="http://24x7shoppers.com/kiran0407/screenshare/reject.php";
+    public static String MYBASIC_MYSTD="http://24x7shoppers.com/kiran0407/screenshare/mystudent.php";
+    public static String MYBASIC_ACCTEACHER="http://24x7shoppers.com/kiran0407/screenshare/acceptteacher.php";
 
 }
 

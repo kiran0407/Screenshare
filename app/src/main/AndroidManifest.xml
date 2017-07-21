@@ -112,6 +112,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.enchcorp.screenshare.Selection" />
         </activity>
+        <activity
+            android:name=".MyStudent"
+            android:label="@string/title_activity_my_student"
+            android:parentActivityName=".Selection"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.enchcorp.screenshare.Selection" />
+        </activity>
     </application>
 
 </manifest>
